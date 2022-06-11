@@ -1,0 +1,336 @@
+/*    GENERAL    */
+
+:root {
+  --backgrond: #000;
+  --text-color: #fff;
+  --button: #8257e5;
+  --border: #29292e;
+  --border-menu-mobile: #a8a8b3;
+  --text-color-menu-mobile: #e1e1e6;
+
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: overlay;
+  height: 100%;
+  background-color: var(--backgrond);
+  font-family: 'Manrope', sans-serif;
+}
+
+.wrapper {
+  width: min(42.8rem, 100%);
+  margin-inline: auto;
+}
+
+/*    NAVIGATION    */
+
+nav .wrapper {
+  box-sizing: content-box;
+  padding-inline: 2.4rem;
+  margin-block: 3.7rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*    MENU    */
+
+body.menu-expanded {
+  overflow: hidden;
+}
+
+body.menu-expanded .menu {
+  z-index: 0;
+  padding-top: 12.2rem;
+  top: 0;
+  transition: transform 400ms;
+  transform: translateY(0);
+}
+
+body.menu-expanded .logo-mobile,
+body.menu-expanded .close-menu {
+  z-index: 100;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-expanded .close-menu {
+  position: static;
+}
+
+body.menu-expanded .content {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu {
+  width: 42.8rem;
+  transform: translateY(100%);
+}
+
+.menu a {
+  display: block;
+  padding-block: 1.8rem 1.4rem;
+  padding-left: 3rem;
+
+  color: var(--text-color-menu-mobile);
+  text-decoration: none;
+  font-size: 1.8rem;
+
+  box-shadow: inset 0 0 0 0 var(--button);
+  transition: ease-out 0.3s;
+}
+
+.menu a + a {
+  border-bottom: 1px solid #29292e;
+  border-top: 1px solid #29292e;
+}
+
+.menu a:hover {
+  box-shadow: inset 1rem 0 0 0 var(--button);
+}
+
+/*    HEADER    */
+
+.content {
+  width: 100%;
+  margin-inline: auto;
+  transition: 400ms;
+  opacity: 1;
+}
+
+.content .header-subtitle {
+  text-align: center;
+}
+
+.header-subtitle {
+  width: 37.3rem;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 4.1rem;
+  letter-spacing: 0.02em;
+  margin-inline: auto;
+  margin-block: 8.8rem;
+}
+
+.button-mobile {
+  color: var(--text-color);
+  background-color: var(--backgrond);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--button);
+  border-radius: 0.6rem;
+  padding: 1rem 3rem;
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 9.8rem;
+
+  box-shadow: inset 0 0 0 0 var(--button);
+  transition: ease-out 0.3s;
+}
+
+.button-mobile:hover {
+  box-shadow: inset 20rem 0 0 0 var(--button);
+}
+
+.titles {
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 5rem;
+  color: var(--text-color);
+}
+
+.title-stroke {
+  text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button),
+    -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+  font-size: 5rem;
+  margin: 0 auto 2.5rem;
+}
+
+.rocket-coffee-mobile {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 42.8rem;
+  margin-inline: auto;
+}
+.mobile-blur {
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/*    DESKTOP    */
+
+.desktop-blur {
+  display: none;
+}
+
+.logo-desktop {
+  visibility: hidden;
+  display: none;
+}
+
+.button-desktop {
+  display: none;
+  visibility: hidden;
+}
+
+/*    MEDIA    */
+
+@media (min-width: 1024px) {
+  .wrapper {
+    width: min(112rem, 100%);
+  }
+
+  /*    NAVIGATION    */
+
+  /* reset */
+  nav#navigation .wrapper * {
+    margin: 0;
+    padding: 0;
+    visibility: initial;
+    opacity: initial;
+    position: initial;
+    display: initial;
+    flex-direction: initial;
+    font-size: initial;
+    font-weight: initial;
+    color: initial;
+    background-color: initial;
+    transform: initial;
+    align-items: initial;
+    justify-content: initial;
+    filter: initial;
+    border: none;
+    box-shadow: initial;
+  }
+  nav#navigation .logo-mobile,
+  nav#navigation .close-menu,
+  nav#navigation .open-menu {
+    display: none;
+    visibility: hidden;
+  }
+
+  nav#navigation {
+    margin-inline: auto;
+    width: 91.8rem;
+  }
+
+  nav#navigation .logo-desktop {
+    margin-right: 14rem;
+  }
+
+  nav#navigation .menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 3.2rem;
+  }
+
+  nav#navigation .menu a {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    letter-spacing: 0.02em;
+    color: white;
+  }
+
+  nav#navigation .menu a:hover {
+    color: var(--button);
+  }
+
+  nav#navigation .button-desktop {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid var(--button);
+    border-radius: 0.6rem;
+    font-weight: 800;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+    margin-left: 6rem;
+    padding: 1.1rem 3.6rem;
+
+    box-shadow: inset 0 0 0 0 var(--button);
+    transition: ease-out 0.3s;
+  }
+
+  nav#navigation .button-desktop:hover {
+    box-shadow: inset 20rem 0 0 0 var(--button);
+  }
+
+  /*    HEADER    */
+
+  header .mobile-blur,
+  header .nav-divider,
+  header .content .button-mobile,
+  header .content .header-subtitle {
+    display: none;
+    visibility: hidden;
+  }
+
+  header .content .title {
+    padding-top: 4rem;
+  }
+
+  header .content h1 {
+    font-weight: 700;
+    font-size: 8rem;
+    line-height: 10.9rem;
+  }
+
+  header .desktop-blur:nth-child(2) {
+    top: -6.3rem;
+    right: 0;
+  }
+
+  header .desktop-blur:nth-child(1) {
+    bottom: 0;
+    left: 0;
+  }
+
+  header .desktop-blur {
+    position: absolute;
+    visibility: visible;
+    display: initial;
+    pointer-events: none;
+  }
+
+  header .images .rocket-coffee-mobile {
+    width: 79.9rem;
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    right: -50%;
+  }
+}
